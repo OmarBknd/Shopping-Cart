@@ -1,7 +1,7 @@
 import { useOutletContext } from 'react-router-dom';
 
 export default function Cart() {
-  const { cart } = useOutletContext();
+  const { cart, removeFromCart } = useOutletContext();
 
 console.log(cart);
 
@@ -23,7 +23,7 @@ console.log(cart);
              <p>{product.quantity}</p>
               <img className="w-10 h-10" src={product.image} alt="" />
             </span>
-       
+            <button onClick={()=> removeFromCart(product.id)}>Remove</button>
          
           </div>
         ))}
